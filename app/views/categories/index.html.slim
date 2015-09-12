@@ -5,7 +5,6 @@ table class="table table-striped"
   thead
     tr
       th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:category_map_id)
       th= model_class.human_attribute_name(:title)
       th= model_class.human_attribute_name(:created_at)
       th=t '.actions', :default => t("helpers.actions")
@@ -13,7 +12,6 @@ table class="table table-striped"
     - @categories.each do |category|
       tr
         td= link_to category.id, category_path(category)
-        td= category.category_map_id
         td= category.title
         td=l category.created_at
         td

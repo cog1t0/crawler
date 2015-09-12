@@ -3,9 +3,9 @@ div class="page-header"
   h1=t '.title', :default => model_class.model_name.human.titleize
 
 p
-  strong= model_class.human_attribute_name(:category_map_id) + ':'
+  strong= model_class.human_attribute_name(:category) + ':'
   br
-  = @map.category_map_id
+  = @map.categories.map{|m| m.title}
 p
   strong= model_class.human_attribute_name(:title) + ':'
   br

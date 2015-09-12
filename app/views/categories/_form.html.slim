@@ -1,6 +1,4 @@
 = simple_form_for @category, :html => { :class => "form-horizontal" } do |f|
-  = f.input :category_map_id
-  = error_span(@category[:category_map_id])
   = f.input :title
   = error_span(@category[:title])
   = f.button :submit, :class => 'btn-primary'
