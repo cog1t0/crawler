@@ -6,14 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Category.create(category_map_id: 1, title: '癒し')
-Category.create(category_map_id: 2, title: '遊び')
-Category.create(category_map_id: 3, title: '食べる')
+c1 = Category.create(title: '癒し')
+c1.maps.build(title: '松江城', description: '説明文説明文', url: 'http://sssssssssssss')
 
-Map.create(category_map_id: 1, title: '松江歴史館', description: '説明文説明文', url: 'http://xxxxxxxxxx')
-Map.create(category_map_id: 2, title: '松江ホーランエンヤ伝承館', description: '説明文説明文', url: 'http://yyyyyyyyyy')
-Map.create(category_map_id: 3, title: 'Greens Baby', description: '説明文説明文', url: 'http://ggggggggggg')
+c2 = Category.create(title: '遊び')
+c2.maps.build(title: '松江イオン', description: '説明文説明文', url: 'http://iiiiiiiiiii')
 
-Category_map.create(category_id 1, map_id: 1)
-Category_map.create(category_id 2, map_id: 2)
-Category_map.create(category_id 3, map_id: 3)
+c3 = Category.create(title: '食べる')
+c3.maps.build(title: 'Greens Baby', description: '説明文説明文', url: 'http://ggggggggggg')
+
+c4 = Category.create(title: '学ぶ')
+c4.maps.build(title: '松江歴史館', description: '説明文説明文', url: 'http://xxxxxxxxxx')
+c4.maps.build(title: '松江ホーランエンヤ伝承館', description: '説明文説明文', url: 'http://yyyyyyyyyy')
+
+c5 = Category.create(title: '縁結び')
+c5.maps.build(title: '八重垣神社', description: '説明文説明文', url: 'http://jjjjjjjjjjjjjj')
+c5.maps.build(title: 'カラコロ広場', description: '説明文説明文', url: 'http://kkkkkkkkkkkkkk')
