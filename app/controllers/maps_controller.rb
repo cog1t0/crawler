@@ -15,10 +15,12 @@ class MapsController < ApplicationController
   # GET /maps/new
   def new
     @map = Map.new
+    @catetories = Category.all
   end
 
   # GET /maps/1/edit
   def edit
+    @categories = Category.all
   end
 
   # POST /maps
@@ -69,6 +71,6 @@ class MapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def map_params
-      params.require(:map).permit(:category_map_id, :title, :description, :url, :description)
+      params.require(:map).permit(:category_map_id, :title, :description, :url, category_ids:[])
     end
 end
