@@ -5,7 +5,7 @@ table class="table table-striped"
   thead
     tr
       th= model_class.human_attribute_name(:id)
-      th= model_class.human_attribute_name(:category_map_id)
+      th= model_class.human_attribute_name(:category)
       th= model_class.human_attribute_name(:title)
       th= model_class.human_attribute_name(:description)
       th= model_class.human_attribute_name(:url)
@@ -15,7 +15,7 @@ table class="table table-striped"
     - @maps.each do |map|
       tr
         td= link_to map.id, map_path(map)
-        td= map.category_map_id
+        td= map.categories.map{|c|c.title}
         td= map.title
         td= map.description
         td= map.url
