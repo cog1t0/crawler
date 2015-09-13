@@ -1,0 +1,21 @@
+h1 おすすめルートを知る
+
+h2　おすすめ　新着
+
+.list-group.text-center.row
+  - @maps.each do |map|
+    .col-xs-4
+      .map_box.well.text-center
+        = link_to map.title, map_path(map)
+        br
+        = map.description
+        br
+        = map.url
+
+h2 カテゴリ
+
+.list-group.text-center.row
+  - @categories.each_with_index do |category|
+    .col-xs-4
+      h3 = link_to category.title, category_path(category), class: 'list-group-item'
+    

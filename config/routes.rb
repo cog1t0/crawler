@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+  get 'crawler_contents/home'
+
+  get 'crawler_contents/search'
+
+  get 'crawler_contents/select'
+
   resources :maps
   resources :categories
+  
+  root 'crawler_contents#home'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
