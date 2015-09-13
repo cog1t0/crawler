@@ -1,4 +1,21 @@
 - model_class = Map
+
+body
+  .navbar.navbar-default.navbar-static-top.map
+      .container
+        = link_to t('.back', :default => t("helpers.links.back")), maps_path, :class => 'btn btn-default navbar-btn'
+
+  .container
+    - @maps.each do |map|
+      a href="#{map_path(map)}"
+        .row.map_list
+          .col-xs-3
+            <img class="img-responsive img-rounded" src="#{image_path('map1.jpg')}">
+          .col-xs-9
+            <h4 class="">#{map.title}</h4>
+            <p>#{map.description}</p>
+
+
 div class="page-header"
   h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
 table class="table table-striped"
