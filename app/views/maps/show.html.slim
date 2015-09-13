@@ -1,29 +1,10 @@
 - model_class = Map
-div class="page-header"
-  h1=t '.title', :default => model_class.model_name.human.titleize
 
-p
-  strong= model_class.human_attribute_name(:category) + ':'
-  br
-  = @map.categories.map{|m| m.title}
-p
-  strong= model_class.human_attribute_name(:title) + ':'
-  br
-  = @map.title
-p
-  strong= model_class.human_attribute_name(:description) + ':'
-  br
-  = @map.description
-p
-  strong= model_class.human_attribute_name(:url) + ':'
-  br
-  = @map.url
+body
+  .navbar.navbar-default.navbar-static-top.map
+      .container
+        = link_to t('.back', :default => t("helpers.links.back")), maps_path, :class => 'btn btn-default navbar-btn'
 
-div class="embed-responsive embed-responsive-4by3"
-  iframe.embed-responsive-item src="#{@map.url}"
-
-= link_to t('.back', :default => t("helpers.links.back")), maps_path, :class => 'btn btn-default'
-'
-= link_to t('.edit', :default => t("helpers.links.edit")), edit_map_path(@map), :class => 'btn btn-default'
-'
-= link_to t('.destroy', :default => t("helpers.links.destroy")), map_path(@map), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+  .map_container
+    div class="embed-responsive embed_map"
+      iframe.embed-responsive-item src="#{@map.url}"

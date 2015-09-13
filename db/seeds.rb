@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 c1 = Category.create(title: '癒し')
-c1.maps.build(title: '松江城', description: '説明文説明文', url: 'https://www.google.com/maps/d/u/0/viewer?mid=z_g10YjFAWCI.k-mBtDeCkJFw')
+c1.maps.build(title: '松江城', description: '説明文説明文', url: 'https://www.google.com/maps/d/embed?mid=z4gluHr_-9Gc.kNItetNx5WLQ')
 c1.save
 
 c2 = Category.create(title: '遊び')
-c2.maps.build(title: '松江イオン', description: '説明文説明文', url: 'https://www.google.com/maps/d/u/0/viewer?mid=z_g10YjFAWCI.k-mBtDeCkJFw')
+c2.maps.build(title: '内中原お寺めぐり', description: '説明文説明文', url: 'https://www.google.com/maps/d/embed?mid=z4gluHr_-9Gc.k7jJWU3ExrPg')
 c2.save
 
 c3 = Category.create(title: '食べる')
