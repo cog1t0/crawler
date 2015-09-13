@@ -19,6 +19,9 @@ p
   br
   = @map.url
 
+div class="embed-responsive embed-responsive-4by3"
+  iframe.embed-responsive-item src="#{@map.url}"
+
 = link_to t('.back', :default => t("helpers.links.back")), maps_path, :class => 'btn btn-default'
 '
 = link_to t('.edit', :default => t("helpers.links.edit")), edit_map_path(@map), :class => 'btn btn-default'
