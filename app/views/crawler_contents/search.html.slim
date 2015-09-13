@@ -17,5 +17,4 @@ h2 カテゴリ
 .list-group.text-center.row
   - @categories.each_with_index do |category|
     .col-xs-4
-      h3 = link_to category.title, category_path(category), class: 'list-group-item'
-    
+      h3 = link_to category.title, maps_path, class: 'list-group-item'
