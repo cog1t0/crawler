@@ -8,10 +8,6 @@ Bundler.require(*Rails.groups)
 
 module Clawler
   class Application < Rails::Application
-    # すべてのサイトからiframeを許可
-    # config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOWALL"
-    config.action_dispatch.default_headers.delete('X-Frame-Options')
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -27,9 +23,7 @@ module Clawler
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-
-    # config.action_dispatch.default_headers = {
-    #   'X-Frame-Options' => 'ALLOWALL'
-    # }
+    # すべてのサイトからiframeを許可
+    config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOWALL"
   end
 end
